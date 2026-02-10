@@ -17,7 +17,7 @@ st.logo("https://cloud.federation-flaura.fr/index.php/apps/files_sharing/publicp
 
 st.title("Simulation des votes à l'AG")
 
-tab1, tab2, tab3 = st.tabs(["Réglages", "Votes", "Notice"])
+tab1, tab2, tab3 = st.tabs([":one: Réglages", ":two: Votes", ":information_source: Notice"])
 
 with tab1:
 
