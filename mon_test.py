@@ -25,16 +25,16 @@ with tab1:
 	
 	col1, col2 = st.columns(2, gap="medium")
 	with col1:
-		nb_ch = st.slider(label="Nombre d'établissements publics (collège 1)", min_value=1,
+		nb_ch = st.slider(label="Nombre d'établissements publics ou privés à but non lucratif (ESPIC) (collège 1)", min_value=1,
 			max_value=30, value=19, step=1)
-		nb_prives = st.slider(label="Nombre d'établissements privés lucratifs (collège 3)", min_value=1,
+		nb_prives = st.slider(label="Nombre d'établissements privés à but lucratif (collège 3)", min_value=1,
 			max_value=20, value=1, step=1)
 
 	with col2:
-		nb_univ = st.slider(label="Nombre d'établissements à valence universitaire (collège 2)", min_value=1,
+		nb_univ = st.slider(label="Nombre d'établissements à valence universitaire (collège 2)", min_value=1,
 			max_value=6, value=5, step=1)
 			
-		nb_assos = st.slider(label="Nombre d'associations de personnes concernées (collège 4)", min_value=1,
+		nb_assos = st.slider(label="Nombre d'associations de personnes concernées (collège 4)", min_value=1,
 			max_value=10, value=1, step=1)
 
 	nb_total = nb_ch + nb_univ + nb_prives + nb_assos
@@ -86,17 +86,17 @@ with tab2:
 	col5, col6 = st.columns(2, gap="medium")
 
 	with col5:
-		pour_ch = st.slider(label="Votes Pour du collège 1", min_value=0,
+		pour_ch = st.slider(label="Votes 'Pour' du collège 1", min_value=0,
 			max_value=nb_ch, value=0, step=1)
 			
-		pour_prives = st.slider(label="Votes Pour du collège 3", min_value=0,
+		pour_prives = st.slider(label="Votes 'Pour' du collège 3", min_value=0,
 			max_value=nb_prives, value=0, step=1)
 	
 	with col6:
-		pour_univ = st.slider(label="Votes Pour du collège 2", min_value=0,
+		pour_univ = st.slider(label="Votes 'Pour' du collège 2", min_value=0,
 			max_value=nb_univ, value=0, step=1)
 
-		pour_assos = st.slider(label="Votes Pour du collège 4", min_value=0,
+		pour_assos = st.slider(label="Votes 'Pour' du collège 4", min_value=0,
 			max_value=nb_assos, value=0, step=1)
 
 	contre_ch = nb_ch - pour_ch
@@ -124,7 +124,7 @@ with tab2:
 	st.table(resultats_table)
 	st.bar_chart(resultats)
 
-	st.header("Résultats pondérés")
+	st.header("Résultats pondérés (exprimés en %)")
 
 	pond_pour_ch = pour_ch * poids["ch"]
 	pond_contre_ch = contre_ch * poids["ch"]
